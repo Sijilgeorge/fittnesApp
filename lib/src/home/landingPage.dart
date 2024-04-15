@@ -8,7 +8,7 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
-    double containerWidth = screenSize.width * 1;
+
     double containerHeight = screenSize.height * 0.3;
     return Scaffold(
       appBar: AppBar(

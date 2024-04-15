@@ -1,7 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:studyapp/src/login/Login1.dart';
 
-class FirstApp extends StatelessWidget {
+class FirstApp extends StatefulWidget {
+  @override
+  State<FirstApp> createState() => _FirstAppState();
+}
+
+class _FirstAppState extends State<FirstApp> {
+  void initstate() {
+    Future.delayed(
+      Duration(seconds: 3),
+    );
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     // Get the screen size
@@ -89,10 +101,10 @@ class FirstApp extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () {
                 // Navigate to the second page when the button is clicked
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Login1()),
-                );
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) => Login1()),
+                    ((route) => false));
               },
               child: const Text('Get Started'),
             ),
